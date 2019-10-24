@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.souche.PersonMapper">
+    <resultMap id="s" type="com.souche.Person">
+
+    </resultMap>
+
+    <select id="findByNameAndAge" resultMap="s">
+        select * from t_person
+        <where>
+            <if test="p_name != null and p_name != ''">
+                t_name = #{name}
+            </if>
+            <if test="p_age != null and p_age != ''">
+                t_age = #{age}
+            </if>
+        </where>
+    </select>
+
+    <update id="updatePerson" >
+        <foreach collection="lists" item="list" open="(" separator="," close=")">
+
+        </foreach>
+    </update>
+
+
+
+
+
+    <select id="" resultMap="">
+
+        SELECT *
+        from `t_order_detail`
+        WHERE order_type_code
+        IN ("00904","00902")
+        AND #{dateField} >= #{}
+        AND #{dateField} <= #{}
+
+    </select>
+
+</mapper>
+
