@@ -5,6 +5,7 @@ import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.compress.utils.Lists;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
@@ -33,7 +34,7 @@ import java.util.stream.Collectors;
  */
 public class Demo02 {
     public static void main(String[] args) throws FileNotFoundException {
-       method11();
+       method6();
     }
     private static PersonMapper personMapper;
 
@@ -219,6 +220,9 @@ public class Demo02 {
         lists.add(person);
         lists.add(person1);
         String s = JSON.toJSONString(lists);
+        List list = JSONObject.parseObject(s, List.class);
+
+
         System.out.println(s);
     }
 }
