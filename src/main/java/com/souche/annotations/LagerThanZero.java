@@ -7,12 +7,10 @@ import java.lang.annotation.Target;
 
 /***
  *@author fanmiao
- *@date 2020/1/9 15:49 
+ *@date 2020/5/17 3:14 下午 
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.FIELD,ElementType.TYPE,ElementType.METHOD})
-public @interface Anno {
-
-    String receiveItemCode() default "";
-    String refundItemCode() default "";
+@Target(value = {ElementType.FIELD})
+public @interface LagerThanZero {
+    boolean value() default true;
 }

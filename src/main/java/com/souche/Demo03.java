@@ -3,21 +3,60 @@ package com.souche;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.support.ExcelTypeEnum;
+import com.souche.pojo.Person;
 import org.apache.commons.compress.utils.Lists;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
+import java.net.UnknownHostException;
+import java.util.*;
 
 /***
  *@author fanmiao
  *@date 2019/10/15 2:34 下午 
  */
+
 public class Demo03 {
-    public static void main(String[] args) {
-        method();
+
+    public static void main(String[] args) throws UnknownHostException {
+//        BigDecimal bigDecimal = BigDecimal.valueOf(0);
+//        BigDecimal bigDecimal2 = BigDecimal.valueOf(300L);
+//        BigDecimal bigDecimal3 = BigDecimal.valueOf(300L);
+//        ArrayList<BigDecimal> bigDecimals = Lists.newArrayList();
+//        bigDecimals.add(bigDecimal);
+//        bigDecimals.add(bigDecimal2);
+//        bigDecimals.add(bigDecimal3);
+//        BigDecimal reduce = bigDecimals.stream().reduce(BigDecimal.ZERO,BigDecimal::add);
+//        System.out.println(reduce);
+        method4();
+
     }
+
+
+    public static void method4() {
+        String a = "sdkfjhakjsdhfkjahsd";
+        String b = a;
+
+
+        a = "00j";
+        System.out.println(b);
+
+    }
+
+    public static void method3() {
+        final Person  person = new Person(1,"","test");
+        person.setId(2);
+        person.setPersonName("lisi");
+        System.out.println(person);
+    }
+
+    public static Person method2() {
+        return new Person();
+    }
+
+
+
 
     public static void method() {
         Person person = new Person(1, "1", "");
@@ -36,7 +75,7 @@ public class Demo03 {
             people.stream().forEach(p ->{
                 List<String> strings = Lists.newArrayList();
                 strings.add(p.getId() + "");
-                strings.add(p.getName());
+                strings.add(p.getPersonName());
                 strings.add(p.getAddr());
                 data.add(strings);
             });
