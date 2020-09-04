@@ -27,6 +27,7 @@ public class UpdateSql {
 //        }
 
 //        update
+//          update 02
         String[] strings ={
         };
         List<String> strings1 = Arrays.asList(strings);
